@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +98,51 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Flashcard specific styles */
+@layer components {
+  .flashcard {
+    @apply w-full max-w-xl aspect-[4/3] relative perspective-1000 cursor-pointer;
+  }
+
+  .flashcard-inner {
+    @apply w-full h-full relative transition-transform duration-700 transform-style-3d;
+  }
+
+  .flashcard-flipped .flashcard-inner {
+    @apply rotate-y-180;
+  }
+
+  .flashcard-front, .flashcard-back {
+    @apply absolute w-full h-full backface-hidden p-6 flex flex-col rounded-xl shadow-lg;
+  }
+
+  .flashcard-front {
+    @apply bg-white border border-gray-200;
+  }
+
+  .flashcard-back {
+    @apply bg-white border border-gray-200 rotate-y-180;
+  }
+}
+
+/* Utility classes for 3D transformations */
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
   }
 }

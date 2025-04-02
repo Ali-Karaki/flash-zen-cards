@@ -1,11 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import CardDeck from "../components/CardDeck";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gray-50 py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-2">Flash Zen Cards</h1>
+          <p className="text-gray-600">Flip through cards to review and learn</p>
+        </header>
+        
+        <main>
+          <CardDeck />
+        </main>
+        
+        <footer className="mt-16 text-center text-sm text-gray-500">
+          <p>Flash Zen Cards © 2023</p>
+        </footer>
       </div>
     </div>
   );

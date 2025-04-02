@@ -5,8 +5,8 @@ import { toast } from "../components/ui/use-toast";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { ArrowLeft, ArrowRight, RefreshCcw, BookmarkPlus, BookmarkMinus, Shuffle } from "lucide-react";
 import Flashcard from "./Flashcard";
-import { kFlashcards, Flashcard as FlashcardType } from "../data/flashcards";
 import { useLocalStorage, resetLocalStorage } from "../hooks/useLocalStorage";
+import { kFlashcards } from "@/data/flashCardsWithIDs";
 
 const CardDeck = () => {
   const [activeTab, setActiveTab] = useState<string>("all");
@@ -27,7 +27,7 @@ const CardDeck = () => {
     if (unseenCards.length > 0) {
       setCurrentCardIndex(0);
     }
-  }, [seenCards]);
+  }, [seenCards, unseenCards.length]);
   
   // Reset card flip state when changing cards or tabs
   useEffect(() => {

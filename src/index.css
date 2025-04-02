@@ -116,7 +116,7 @@
   }
 
   .flashcard-front, .flashcard-back {
-    @apply absolute w-full h-full backface-hidden p-6 flex flex-col rounded-xl shadow-lg;
+    @apply absolute w-full h-full backface-hidden p-4 sm:p-6 flex flex-col rounded-xl shadow-lg overflow-hidden;
   }
 
   .flashcard-front {
@@ -124,7 +124,7 @@
   }
 
   .flashcard-back {
-    @apply bg-white border border-gray-200 rotate-y-180;
+    @apply bg-white border border-gray-200 rotate-y-180 overflow-y-auto;
   }
 }
 

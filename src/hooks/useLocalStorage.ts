@@ -24,7 +24,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T)
       console.log("Error accessing localStorage", error);
     }
     setHasHydrated(true);
-  }, [key, initialValue]);
+  }, [key, initialValue]); // Added initialValue to the dependency array
 
   const setValue = (value: T) => {
     try {

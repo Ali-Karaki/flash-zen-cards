@@ -2,7 +2,7 @@
 import { Flashcard as FlashcardType } from "../data/flashcards";
 
 interface FlashcardProps {
-  card: FlashcardType;
+  card: FlashcardType | null;
   onReviewLater: (id: string) => void;
   isMarkedForReview: boolean;
   isFlipped: boolean;
@@ -20,6 +20,15 @@ const Flashcard = ({
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
   };
+
+  // If card is null, render a placeholder
+  if (!card) {
+    return (
+      <div className="flashcard flex items-center justify-center">
+        <p className="text-gray-500">No card available</p>
+      </div>
+    );
+  }
 
   return (
     <div 
